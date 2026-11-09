@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Meet My Friends · 3학년 6~8단원</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Fredoka:wght@500;600;700&family=Jua&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=202611040404">
+</head>
+<body>
+<div class="blob a"></div><div class="blob b"></div><div class="blob c"></div>
+
+<header class="top">
+  <div class="title">
+    <h1>Meet My <span>Friends!</span></h1>
+    <p>새 친구 20명을 만나 묻고 답해요 · 기분 · 나이 · 가방 · 할 수 있는 일</p>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button class="tab" role="tab" id="t-meet" aria-selected="true" aria-controls="meet">👫 친구 만나기</button>
+    <button class="tab" role="tab" id="t-my" aria-selected="false" aria-controls="my">💚 내 AI 친구</button>
+    <button class="tab" role="tab" id="t-quiz" aria-selected="false" aria-controls="quiz">🎤 내 문장 연습</button>
+    <button class="tab" role="tab" id="t-words" aria-selected="false" aria-controls="words">💬 친구한테 묻기</button>
+  </nav>
+</header>
+
+<main>
+  <!-- ========== 1. 친구 만나기 ========== -->
+  <section id="meet" role="tabpanel" aria-labelledby="t-meet">
+    <div id="grid-view">
+      <div class="bar">
+        <p class="lead"><b>🔊 이름</b>을 누르면 친구 이름을 들려줘요. 영어 <b>낱말</b>을 누르면 소리와 뜻을 알려 줘요. 친구 카드를 눌러 보세요! 질문을 하고 <b>?</b> 카드를 누르면 친구가 대답해요. 연습할 문장은 <b>☆</b> 로 담아요.</p>
+        <div class="bar-r">
+          <span class="met" id="met"></span>
+          <button class="btn ghost" id="shuffle">🎲 새 친구 20명</button>
+        </div>
+      </div>
+      <div id="mybar"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+
+    <div id="profile" hidden>
+      <div class="bar">
+        <button class="btn ghost" id="back">← 친구 목록</button>
+        <div class="bar-r">
+          <button class="btn ghost" id="prev" aria-label="이전 친구">◀</button>
+          <span class="met" id="pos"></span>
+          <button class="btn ghost" id="next" aria-label="다음 친구">▶</button>
+        </div>
+      </div>
+      <div class="pf" id="pf"></div>
+    </div>
+  </section>
+
+  <!-- ========== 2. 💚 내 AI 친구 ========== -->
+  <section id="my" role="tabpanel" aria-labelledby="t-my" hidden>
+    <p class="lead">내가 고른 AI 친구예요. 이 기록을 보고 <b>워크시트 1쪽</b>을 써요. (이 기기에 저장돼요)</p>
+    <div id="mybox"></div>
+  </section>
+
+  <!-- ========== 3. 내 문장 연습 ========== -->
+  <section id="quiz" role="tabpanel" aria-labelledby="t-quiz" hidden>
+    <div class="bar">
+      <p class="lead">내가 <b>☆</b> 로 담은 문장이에요. 낱말을 누르면 뜻을 알려 줘요. 🔊 로 듣고 🎤 를 눌러 따라 말해요. <b>80%</b> 넘으면 ✅!</p>
+      <div class="bar-r"><span class="met" id="score"></span></div>
+    </div>
+    <div class="qz" id="qz"></div>
+  </section>
+
+  <!-- ========== 4. 친구한테 묻기 ========== -->
+  <section id="words" role="tabpanel" aria-labelledby="t-words" hidden>
+    <p class="lead">친구를 만나면 이렇게 물어봐요! 🔊 로 듣고 🎤 를 눌러 질문을 말하면 정확도를 알려 줘요.</p>
+    <div class="wd" id="wd"></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <label class="rate">🐢 말하기 속도 <input type="range" id="rate" min="0.5" max="1.1" step="0.05" value="0.8"> 🐇</label>
+  <span class="ver">버전 11/04-2</span>
+  <span id="sr-warn" hidden>🎤 따라 말하기는 크롬/엣지에서 할 수 있어요.</span>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="pics.js?v=202611040404"></script>
+<script src="data.js?v=202611040404"></script>
+<script src="avatar.js?v=202611040404"></script>
+<script src="app.js?v=202611040404"></script>
+</body>
+</html>
